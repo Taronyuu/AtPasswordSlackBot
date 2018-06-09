@@ -1,22 +1,14 @@
 <?php
 
-namespace Tests;
-
-use App\BotManTester;
-use BotMan\BotMan\BotMan;
-use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-
-abstract class TestCase extends BaseTestCase
+abstract class TestCase extends Laravel\Lumen\Testing\TestCase
 {
-    use CreatesApplication;
-
     /**
-     * @var BotMan
+     * Creates the application.
+     *
+     * @return \Laravel\Lumen\Application
      */
-    protected $botman;
-
-    /**
-     * @var BotManTester
-     */
-    protected $bot;
+    public function createApplication()
+    {
+        return require __DIR__.'/../bootstrap/app.php';
+    }
 }
