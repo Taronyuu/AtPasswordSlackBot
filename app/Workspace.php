@@ -8,9 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
-class User   extends Model
+class Workspace extends Model
 {
-    use Authenticatable, Authorizable;
 
     /**
      * The attributes that are mass assignable.
@@ -18,15 +17,8 @@ class User   extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email',
-    ];
-
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
+        'team_id',
+        'team_domain',
+        'token',
     ];
 }
