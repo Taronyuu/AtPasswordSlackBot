@@ -9,7 +9,7 @@ use GuzzleHttp\Client;
 
 class RemovePasswordJob extends Job
 {
-	
+
 	protected $request;
 
     /**
@@ -30,6 +30,13 @@ class RemovePasswordJob extends Job
     public function handle()
     {
         $client = new Client();
+        info(json_encode($this->request->get('response_url')));
+        info(json_encode([
+            'text'  => '',
+            'response_type' => 'ephemeral',
+            "replace_original" => true,
+            "delete_original" => true,
+        ]));
         $client->request('POST', $this->request->get('response_url'), [
         	'json'	=> [
 	            'text'  => '',

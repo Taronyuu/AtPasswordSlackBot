@@ -84,7 +84,7 @@ class CommandController extends Controller
             ]);
         }
 
-        $this->dispatch((new RemovePasswordJob($request->all()))->delay(30));
+        $this->dispatch((new RemovePasswordJob($request->all()))->delay(10));
 
         return response()->json([
             'text'  => 'Here is your decrypted password:',
