@@ -6,6 +6,7 @@ use App\Workspace;
 use App\Repositories\PasswordRepository;
 use App\Repositories\WorkspaceRepository;
 use Illuminate\Http\Request;
+use App\Jobs\PasswordEncryptedJob;
 
 class CommandController extends Controller
 {
@@ -52,20 +53,10 @@ class CommandController extends Controller
             return $this->decryptPasswordAndReply($request, $workspace);
         }
 
-        $password = $this->passwordRepository->create(
-            $workspace,
-            urldecode($request->get('text'))
-        );
-
-        return response()->json([
-            'text'  => 'Your password has been encrypted. Use the following command to decrypt your password.',
-            'response_type' => 'in_channel',
-            'attachments' => [
-                [
-                    'text' => '/password ' . $password->token,
-                ]
-            ]
-        ]);
+		$this->dispatch(new PasswordEncryptedJob($request->all()));
+        
+        return response(null, 200);
+        
     }
 
     /**
