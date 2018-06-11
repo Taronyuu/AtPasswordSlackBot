@@ -25,7 +25,13 @@ class PasswordEncryptedJob extends Job
     /**
      * Execute the job.
      *
+     * @param PasswordRepository  $passwordRepository
+     * @param WorkspaceRepository $workspaceRepository
+     *
      * @return void
+     * @throws \Defuse\Crypto\Exception\BadFormatException
+     * @throws \Defuse\Crypto\Exception\EnvironmentIsBrokenException
+     * @throws \TypeError
      */
     public function handle(PasswordRepository $passwordRepository, WorkspaceRepository $workspaceRepository)
     {
@@ -36,7 +42,7 @@ class PasswordEncryptedJob extends Job
         
         $password = $passwordRepository->create(
             $workspace,
-            urldecode($this->request->get('text'))
+            $this->request->get('text')
         );
         
         $client = new Client();
