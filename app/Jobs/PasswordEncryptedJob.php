@@ -9,13 +9,12 @@ use GuzzleHttp\Client;
 
 class PasswordEncryptedJob extends Job
 {
-	
 	protected $request;
-	
+
     /**
      * Create a new job instance.
      *
-     * @return void
+     * @param array $request
      */
     public function __construct(array $request)
     {
@@ -57,6 +56,5 @@ class PasswordEncryptedJob extends Job
 				]
 			]
     	]);
-
     }
 }

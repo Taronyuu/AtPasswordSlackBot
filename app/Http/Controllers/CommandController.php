@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\RemovePasswordJob;
 use App\Workspace;
 use App\Repositories\PasswordRepository;
 use App\Repositories\WorkspaceRepository;
@@ -54,7 +55,7 @@ class CommandController extends Controller
         }
 
 		$this->dispatch(new PasswordEncryptedJob($request->all()));
-        
+
         return response(null, 200);
         
     }
@@ -82,6 +83,8 @@ class CommandController extends Controller
                 'response_type' => 'ephemeral',
             ]);
         }
+
+        $this->dispatch((new RemovePasswordJob($request->all()))->delay(30));
 
         return response()->json([
             'text'  => 'Here is your decrypted password:',
