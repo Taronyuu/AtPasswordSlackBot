@@ -47,11 +47,11 @@ class PasswordEncryptedJob extends Job
         $client = new Client();
         $client->request('POST', $this->request->get('response_url'), [
         	'json'	=> [
-	            'text'  => '@<' . $this->request->get('user_id') . '> shared a new password, use the following command to see the password:',
+	            'text'  => '<@' . $this->request->get('user_id') . '> shared a new password, use the following command to see the password:',
 	            'response_type' => 'in_channel',
 	            'attachments' => [
 	                [
-	                    'text' => '`/password ' . $password->token . '`',
+	                    'text' => '/password ' . $password->token . '',
 	                ]
 				]
 			]

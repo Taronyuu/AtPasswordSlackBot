@@ -85,7 +85,7 @@ class CommandController extends Controller
         }
 
         return response()->json([
-            'text'  => 'Here is your decrypted password:' . PHP_EOL .
+            'text'  => 'Here is your shared password:' . PHP_EOL .
             '_This message will be automatically removed after a while_',
             'response_type' => 'ephemeral',
             'attachments' => [
