@@ -22,6 +22,7 @@ class CommandController extends Controller
      * @param PasswordRepository  $passwordRepository
      */
     public function __construct( WorkspaceRepository $workspaceRepository, PasswordRepository $passwordRepository ) {
+
         $this->workspaceRepository = $workspaceRepository;
         $this->passwordRepository  = $passwordRepository;
     }
