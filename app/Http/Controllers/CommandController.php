@@ -79,19 +79,18 @@ class CommandController extends Controller
 
         if(!$password){
             return response()->json([
-                'text' => 'Unable to find your password. It most likely expired.',
+                'text' => '_Unable to find your password. It most likely expired._',
                 'response_type' => 'ephemeral',
             ]);
         }
 
-        $this->dispatch((new RemovePasswordJob($request->all()))->delay(10));
-
         return response()->json([
-            'text'  => 'Here is your decrypted password:',
+            'text'  => 'Here is your decrypted password:' . PHP_EOL .
+            '_This message will be automatically removed after a while_',
             'response_type' => 'ephemeral',
             'attachments' => [
                 [
-                    'text'  => $password->decryptedPassword(),
+                    'text'  => '`' . $password->decryptedPassword() . '`',
                 ]
             ]
         ]);
