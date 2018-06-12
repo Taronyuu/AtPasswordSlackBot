@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\RemovedExpiredPasswords;
 use Illuminate\Console\Scheduling\Schedule;
 use Laravel\Lumen\Console\Kernel as ConsoleKernel;
 
@@ -13,7 +14,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        RemovedExpiredPasswords::class,
     ];
 
     /**
@@ -24,6 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        //
+        $schedule->command('password:remove-expired')
+            ->hourly();
     }
 }

@@ -3,12 +3,24 @@ namespace App\Repositories;
 
 use App\Password;
 use App\Workspace;
+use Carbon\Carbon;
 use Defuse\Crypto\Crypto;
 use Defuse\Crypto\Key;
+use Illuminate\Database\Eloquent\Collection;
 
 class PasswordRepository extends BaseRepository {
 
     public $model = Password::class;
+
+    /**
+     * model function.
+     *
+     * @return Password
+     */
+    public function model(): Password
+    {
+        return new Password();
+    }
 
     /**
      * create function.
@@ -48,9 +60,16 @@ class PasswordRepository extends BaseRepository {
             ->first();
     }
 
-    public function model(): Password
+    /**
+     * getExpired function.
+     *
+     * @return Collection
+     */
+    public function getExpired(): Collection
     {
-        return new Password();
+        return $this->model()
+            ->where('created_at', '<', (new Carbon())->subDay())
+            ->get();
     }
 
 }

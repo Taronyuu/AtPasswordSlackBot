@@ -10,4 +10,17 @@ abstract class BaseRepository {
 
     abstract public function model();
 
+    /**
+     * delete function.
+     *
+     * @param Model $model
+     *
+     * @return bool|null
+     * @throws \Exception
+     */
+    public function delete(Model $model): bool
+    {
+        return $model->delete();
+    }
+
 }
