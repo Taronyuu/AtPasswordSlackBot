@@ -26,7 +26,7 @@
     <header id="header" class="alt">
         <span class="logo"><img src="{{ url('images/logo-small.png') }}" alt="" /></span>
         <h1>At Password</h1>
-        <p>Slack app to securely share passwords with your teammates.</p>
+        <p>A Slack app to securely share passwords with your teammates.</p>
     </header>
 
     <!-- Nav -->
@@ -49,12 +49,12 @@
                         <h2>About At Password</h2>
                     </header>
                     <p>
-                        Remember the old time when people didn't share passwords in an unencrypted way? No? We don't either. Thats why we've developed an simple and easy wat
-                        to share your passwords inside your team. Don't just paste plain passwords anymore and leave them up for grabs, but encrypt them and make sure only
+                        Remember the old time when people only shared passwords in a safe way? No? We don't either. That's why we've developed a simple and easy way
+                        to share passwords with your team. Don't just paste plain passwords anymore and leave them up for grabs, but encrypt them and make sure only
                         the people that need to see it can.
                     </p>
                     <ul class="actions">
-                        <li><a href="#installation" class="button">Use for free</a></li>
+                        <li><a href="#installation" class="button">Get started</a></li>
                     </ul>
                 </div>
                 <span class="image"><img src="{{ url('images/slack.png') }}" alt="" /></span>
@@ -100,7 +100,7 @@
                     your team will be shared with this application.</strong>
                 </p>
                 <p>
-                    Afterwards a command <strong>/password</strong> is added to your workspace. You can use this to share a password inside a channel or private message.
+                    Afterwards the command <strong>/password</strong> is added to your workspace. You can use this to share a password inside a channel or private message.
                     A teammate will be able decrypt this passwords with the provider command.
                 </p>
             </header>
@@ -121,7 +121,7 @@
         <section>
             <h2>About</h2>
             <p>At Password has been developed to scratch my own itch, everytime I had to share a password in plain text via Slack it felt like something wasn't right.
-            To solve this I developed this Slack app only share the passwords encrypted.</p>
+            To solve this I developed this Slack app to share the passwords encrypted.</p>
             <ul class="actions">
                 <li><a href="#features" class="button">Learn More</a></li>
             </ul>
