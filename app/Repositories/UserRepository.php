@@ -27,8 +27,6 @@ class UserRepository extends BaseRepository {
     function create(array $data): User
     {
         return $this->model()
-            ->create([
-
-            ]);
+            ->create($data);
     }
 }
