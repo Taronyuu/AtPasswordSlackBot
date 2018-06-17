@@ -18,15 +18,6 @@ class User   extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email',
-    ];
-
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
+        'user_id', 'team_name', 'team_id', 'scope', 'access_token',
     ];
 }

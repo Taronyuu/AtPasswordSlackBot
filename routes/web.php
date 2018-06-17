@@ -11,4 +11,9 @@
 |
 */
 
+$router->get('/', 'PagesController@index');
+
+$router->get('/auth/slack/redirect', 'Auth\SlackController@redirect');
+$router->get('/auth/slack/oauth', 'Auth\SlackController@oauth');
+
 $router->post('/commands/password', 'CommandController@slashPassword');
