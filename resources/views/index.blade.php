@@ -128,7 +128,7 @@
         </section>
         <section>
             <h2>Contact</h2>
-            <dl class="alt">
+            <dl class="alt" id="support">
                 <dt>Email</dt>
                 <dd><a href="mailto:me@zandervdm.nl">me@zandervdm.nl</a></dd>
             </dl>
