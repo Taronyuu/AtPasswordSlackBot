@@ -55,6 +55,10 @@ class CommandController extends Controller
             return $this->decryptPasswordAndReply($request, $workspace);
         }
 
+        if(starts_with(trim($request->get('text')), 'help')) {
+            return $this->sendHelpReply($request);
+        }
+
 		$this->dispatch(new PasswordEncryptedJob($request->all()));
 
         return response(null, 200);
@@ -71,6 +75,7 @@ class CommandController extends Controller
      * @throws \Defuse\Crypto\Exception\EnvironmentIsBrokenException
      * @throws \Defuse\Crypto\Exception\WrongKeyOrModifiedCiphertextException
      * @throws \TypeError
+     * @throws \Defuse\Crypto\Exception\BadFormatException
      */
     protected function decryptPasswordAndReply( Request $request, Workspace $workspace ) {
         $password = $this->passwordRepository->find(
@@ -94,6 +99,20 @@ class CommandController extends Controller
                     'text'  => '`' . $password->decryptedPassword() . '`',
                 ]
             ]
+        ]);
+    }
+
+    /**
+     * sendHelpReply function.
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function sendHelpReply( Request $request ) {
+        return response()->json([
+            'text' => '_Any questions or comments? Feel free to get into contact, reach me at `me@zandervdm.nl` or check the website: https://atpassword.zandervdm.nl_',
+            'response_type' => 'ephemeral',
         ]);
     }
 
