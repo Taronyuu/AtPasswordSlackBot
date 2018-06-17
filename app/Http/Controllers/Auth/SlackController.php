@@ -45,9 +45,7 @@ class SlackController extends Controller
      */
     public function oauth(Request $request)
     {
-        if($request->get('state') != $this->state) {
-            abort(403);
-        }
+        if(!$request->get('code')) abort(404);
 
         $data = [
             'client_id=' . env('SLACK_CLIENT_ID'),
@@ -66,6 +64,6 @@ class SlackController extends Controller
 
         $this->userRepository->create($response);
 
-        return response('thanks!');
+        return redirect('/?success=1');
     }
 }

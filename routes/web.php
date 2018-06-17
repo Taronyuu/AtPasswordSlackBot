@@ -12,6 +12,7 @@
 */
 
 $router->get('/', 'PagesController@index');
+$router->get('/privacy-policy', 'PagesController@privacyPolicy');
 
 $router->get('/auth/slack/redirect', 'Auth\SlackController@redirect');
 $router->get('/auth/slack/oauth', 'Auth\SlackController@oauth');

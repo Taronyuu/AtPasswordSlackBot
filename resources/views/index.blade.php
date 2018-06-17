@@ -1,27 +1,6 @@
-<!DOCTYPE HTML>
-<!--
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-<head>
-    <title>At Password - A Slack app made with <3</title>
-    <meta name="description" content="Slack app to securely share passwords with your teammates.">
-    <meta name="keywords" content="Slack,app,passwords,secure">
-    <meta name="author" content="Zander van der Meer">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="{{ url('assets/css/main.css') }}" />
-    <link rel="stylesheet" href="{{ url('assets/css/app.css') }}" />
-    <noscript><link rel="stylesheet" href="{{ url('assets/css/noscript.css') }}" /></noscript>
-    <meta name="slack-app-id" content="AB4HBAZ4K">
-</head>
-<body class="is-preload">
+@extends('master.master')
 
-<!-- Wrapper -->
-<div id="wrapper">
-
+@section('content')
     <!-- Header -->
     <header id="header" class="alt">
         <span class="logo"><img src="{{ url('images/logo-small.png') }}" alt="" /></span>
@@ -40,7 +19,11 @@
 
     <!-- Main -->
     <div id="main">
-
+        @if(app('request')->get('success'))
+            <div class="alert alert-success">
+                <p>Your application has been successfully authorized. You can use the <strong>/password</strong> command from your Slack client.</p>
+            </div>
+        @endif
         <!-- Introduction -->
         <section id="intro" class="main">
             <div class="spotlight">
@@ -97,7 +80,7 @@
                 <p>
                     After clicking the button below you will be redirected to the page to Authorize this application.
                     The application will only require access to a Slash Command. <strong>Unless the <code>/password</code> command is invoked, nothing in
-                    your team will be shared with this application.</strong>
+                        your team will be shared with this application.</strong>
                 </p>
                 <p>
                     Afterwards the command <strong>/password</strong> is added to your workspace. You can use this to share a password inside a channel or private message.
@@ -121,30 +104,18 @@
         <section>
             <h2>About</h2>
             <p>At Password has been developed to scratch my own itch, everytime I had to share a password in plain text via Slack it felt like something wasn't right.
-            To solve this I developed this Slack app to share the passwords encrypted.</p>
+                To solve this I developed this Slack app to share the passwords encrypted.</p>
             <ul class="actions">
                 <li><a href="#features" class="button">Learn More</a></li>
             </ul>
         </section>
         <section>
-            <h2>Contact</h2>
+            <h2>Support</h2>
             <dl class="alt" id="support">
                 <dt>Email</dt>
                 <dd><a href="mailto:me@zandervdm.nl">me@zandervdm.nl</a></dd>
             </dl>
         </section>
-        <p class="copyright">&copy; At Password. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+        <p class="copyright">&copy; At Password. Design: <a href="https://html5up.net">HTML5 UP</a>. <a href="{{ url('privacy-policy') }}">Privacy Policy</a></p>
     </footer>
-</div>
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-</body>
-</html>
+@endsection
