@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="{{ url('assets/css/app.css') }}" />
     <noscript><link rel="stylesheet" href="{{ url('assets/css/noscript.css') }}" /></noscript>
     <meta name="slack-app-id" content="AB4HBAZ4K">
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 <body class="is-preload">
 

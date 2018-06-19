@@ -15,6 +15,7 @@
             <li><a href="#intro" class="active">Introduction</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#installation">Installation</a></li>
+            <li><a href="#selfhosting">Self hosting</a></li>
         </ul>
     </nav>
 
@@ -94,6 +95,35 @@
                         @include('master.partials.slack')
                     </li>
                     {{--<li><a href="generic.html" class="button">Learn More</a></li>--}}
+                </ul>
+            </footer>
+        </section>
+
+        <section id="selfhosting" class="main special">
+            <header class="major">
+                <h2>Self hosting</h2>
+                <p>Obviously we understand that most people don't trust another 3rd party. Therefore the code is fully open source and free for you to host it yourself.</p>
+                <p><a href="https://github.com/Taronyuu/AtPasswordSlackBot">Checkout the repository</a></p>
+            </header>
+            <footer class="major">
+                <ul class="actions special">
+                    <li>
+                        <!-- Place this tag where you want the button to render. -->
+                        <a class="github-button" href="https://github.com/Taronyuu" data-size="large" data-show-count="true" aria-label="Follow @Taronyuu on GitHub">Follow @Taronyuu</a>
+                    </li><li>
+                        <!-- Place this tag where you want the button to render. -->
+                        <a class="github-button" href="https://github.com/Taronyuu/AtPasswordSlackBot" data-size="large" data-show-count="true" aria-label="Star Taronyuu/AtPasswordSlackBot on GitHub">Star</a>
+                    </li><li>
+                        <!-- Place this tag where you want the button to render. -->
+                        <a class="github-button" href="https://github.com/Taronyuu/AtPasswordSlackBot/fork" data-size="large" data-show-count="true" aria-label="Fork Taronyuu/AtPasswordSlackBot on GitHub">Fork</a>
+                    </li><li>
+                        <!-- Place this tag where you want the button to render. -->
+                        <a class="github-button" href="https://github.com/Taronyuu/AtPasswordSlackBot/issues" data-size="large" data-show-count="true" aria-label="Issue Taronyuu/AtPasswordSlackBot on GitHub">Issue</a>
+                    </li><li>
+                        <!-- Place this tag where you want the button to render. -->
+                        <a class="github-button" href="https://github.com/Taronyuu/AtPasswordSlackBot/archive/master.zip" data-size="large" aria-label="Download Taronyuu/AtPasswordSlackBot on GitHub">Download</a>
+
+                    </li>
                 </ul>
             </footer>
         </section>
