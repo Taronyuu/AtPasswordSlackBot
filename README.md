@@ -1,21 +1,28 @@
-# Lumen PHP Framework
+# 🚀 At Password Slack App
+###### A Slack app to securely share passwords with your teammates.
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
 
-## Official Documentation
+## 🤔 What is it?
+A simple self hosted Lumen app to securely share passwords with your teammates inside Slack. For more information please check the landings page here [atpassword.zandervdm.nl](https://atpassword.zandervdm.nl)
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
+## 🏃 Running
+*TODO: expand this to a full guide.*
 
-## Security Vulnerabilities
+To start with running your own bot you should do the following things:
+- Checkout this repository and install Lumen. The installation guide can be found here: [lumen.laravel.com/docs/5.6/installation](https://lumen.laravel.com/docs/5.6/installation)
+- Setup a MySQL database
+- Copy the `.env.example` file to `.env` and fill in the MySQL details.
+- Create a Slack app here: [api.slack.com/apps](https://api.slack.com/apps)
+- Copy the `Verification token` to the `SLACK_COMMAND_VERIFICATION_TOKEN` inside the `.env` file.
+- Create a Slash Command, name it whatever you want.
+- Set the Request URL of the command to `https://this-app-domain.com/commands/password`
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+*Optionally*, you can choose to distribute this app (don't try to get it reviewed, Slack will deny it), OAuth support is already implemented.
 
-## License
+## 🚨 Security
 
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+No audits done, code is open source so feel free to do it yourself. No guarantees in any way. 🤫
+
+## 🗓 To-do
+Please open issues if you want anything added. Its open source for a reason.
